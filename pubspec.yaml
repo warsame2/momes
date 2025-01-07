@@ -1,0 +1,39 @@
+name: mom
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.3 # لإدارة الحالة
+  audioplayers: ^3.0.1 # لتشغيل الصوتيات
+  http: ^0.15.0 # (إذا كنت بحاجة لتحميل الصوتيات من الإنترنت)
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  # إضافة ملفات النصوص والصوتيات
+  assets:
+    - assets/quran.json
+
+  # إذا أردت إضافة ملفات صوتية مباشرةً
+  # - assets/audio/audio1.mp3
+  # - assets/audio/audio2.mp3
+
+  # الخطوط (اختياري)
+  fonts:
+    - family: Amiri
+      fonts:
+        - asset: assets/fonts/Amiri-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf

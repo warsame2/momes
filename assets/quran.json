@@ -1,0 +1,13 @@
+{
+    "89": {
+      "name": "الفجر",
+      "verses": [
+        {"number": 1, "text": "وَالْفَجْرِ", "audioUrl": "https://example.com/audio1.mp3"},
+        {"number": 2, "text": "وَلَيَالٍ عَشْرٍ", "audioUrl": "https://example.com/audio2.mp3"},
+        {"number": 3, "text": "وَالشَّفْعِ وَالْوَتْرِ", "audioUrl": "https://example.com/audio3.mp3"},
+        {"number": 4, "text": "وَاللَّيْلِ إِذَا يَسْرِ", "audioUrl": "https://example.com/audio4.mp3"},
+        {"number": 5, "text": "هَلْ فِي ذَٰلِكَ قَسَمٌ لِذِي حِجْرٍ", "audioUrl": "https://example.com/audio5.mp3"}
+      ]
+    }
+  }
+  
