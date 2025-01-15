@@ -9,15 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-<<<<<<< Updated upstream
-  provider: ^6.1.3 # لإدارة الحالة
-  audioplayers: ^3.0.1 # لتشغيل الصوتيات
-  http: ^0.15.5 # (إذا كنت بحاجة لتحميل الصوتيات من الإنترنت)
-=======
-  provider: ^6.1.3
-  audioplayers: ^1.0.1 # الإصدار المتوافق مع Flutter 3.7.3
-  http: ^0.15.0
->>>>>>> Stashed changes
+  provider: ^6.1.2 # لإدارة الحالة
+  audioplayers: ^6.1.0 # لتشغيل الصوتيات
+  http: ^1.2.2 # تحميل الصوتيات من الإنترنت
 
 dev_dependencies:
   flutter_test:
@@ -29,4 +23,4 @@ flutter:
   assets:
     - assets/quran.json
   #  - assets/audio/audio1.mp3
-   # - assets/audio/audio2.mp3
+  #  - assets/audio/audio2.mp3
