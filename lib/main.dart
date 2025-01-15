@@ -1,33 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'quran_provider.dart';
-import 'surah_screen.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('مشروع حفظ القرآن'),
+        ),
+        body: QuranAudioPlayer(),
+      ),
+    );
+  }
+}
+
+class QuranAudioPlayer extends StatefulWidget {
+  @override
+  _QuranAudioPlayerState createState() => _QuranAudioPlayerState();
+}
+
+class _QuranAudioPlayerState extends State<QuranAudioPlayer> {
+  final AudioPlayer _audioPlayer = AudioPlayer();
+  bool isPlaying = false;
+
+  void _playAudio(String url) async {
+    if (isPlaying) {
+      await _audioPlayer.stop();
+      setState(() {
+        isPlaying = false;
+      });
+    } else {
+      await _audioPlayer.play(UrlSource(url));
+      setState(() {
+        isPlaying = true;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => QuranProvider(),
-      child: MaterialApp(
-        title: 'حفظ جزء عم',
-        theme: ThemeData(
-          primarySwatch: Colors.teal,
-          cardTheme: CardTheme(
-            color: Colors.teal.shade50,
-            margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              _playAudio('assets/audio/audio1.mp3');
+            },
+            child: Text(isPlaying ? 'إيقاف' : 'تشغيل'),
           ),
-          textTheme: const TextTheme(
-            bodyText1: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87),
-            bodyText2: TextStyle(fontSize: 16, color: Colors.black54),
-          ),
-        ),
-        home: const SurahScreen(surahId: '89'),
+        ],
       ),
     );
   }
